@@ -5,11 +5,11 @@
     "family": "evaluation_contamination_detection"
   },
   "current": {
-    "state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
     "deployed": false,
-    "canonical_position_pending_exact_head_proof": true
+    "canonical_position_pending_exact_head_proof": false
   },
   "target": {
     "purpose": "Detect exact train/eval contamination over supplied example identities and feature signatures under an explicit, receipt-bound policy.",
@@ -43,7 +43,11 @@
     "require_exact_source_sha": true,
     "require_receipt": true,
     "require_nonclaims": true,
-    "next_gate": "CANONICAL_POSITION_RESOLVED"
+    "next_gate": "EVOLUTION_CURSOR_DEFINED"
+  },
+  "evolution": {
+    "cursor": "next:add_similarity_signature_attestation_and_dataset_source_provenance",
+    "composition_gate": "Do not consume sibling collusion/budget signals until receipt-bound integration is implemented and proven."
   },
   "nonclaims": [
     "no Scale AI affiliation",
