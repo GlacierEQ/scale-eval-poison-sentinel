@@ -1,0 +1,33 @@
+{
+  "schema": "glaciereq.canonical-position-proof.v1",
+  "repository": "GlacierEQ/scale-eval-poison-sentinel",
+  "gate": "CANONICAL_POSITION_RESOLVED",
+  "result": "PASS",
+  "tested_source_sha": "965ca718501cc97fd9065721f513d38b92402c35",
+  "workflow": {
+    "provider": "github-actions",
+    "run_id": 31389953835,
+    "python": "success",
+    "go": "success"
+  },
+  "observed_scope": [
+    "exact example-ID overlap",
+    "exact supplied feature-hash overlap ratio",
+    "dataset identity fingerprint",
+    "contamination policy fingerprint",
+    "policy-bound report fingerprint",
+    "duplicate/malformed dataset refusal",
+    "bounded threshold refusal",
+    "Python and Go contamination semantics",
+    "canonical role and non-integration boundary"
+  ],
+  "canonical_role": "CANONICAL_SPECIALIST:exact_train_eval_contamination_detection",
+  "limitations": [
+    "does not compute semantic similarity",
+    "exact feature-hash equality only",
+    "no benchmark/model evaluation execution",
+    "no exercised integration with collusion or budget siblings",
+    "no Scale AI affiliation or adoption claim"
+  ],
+  "receipt_commit_policy": "Final receipt-inclusive PR-head Python and Go CI must pass before merge."
+}
