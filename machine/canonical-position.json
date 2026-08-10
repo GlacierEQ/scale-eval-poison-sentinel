@@ -1,0 +1,64 @@
+{
+  "schema": "glaciereq.repo-canonical-position.v1",
+  "repository": "GlacierEQ/scale-eval-poison-sentinel",
+  "position_state": "RESOLVED",
+  "role": "CANONICAL_SPECIALIST",
+  "company_target": "Scale AI",
+  "canonical_identity": "eval-poison-sentinel",
+  "owns": "exact_train_eval_contamination_detection",
+  "unique_value": [
+    "exact example-ID overlap and exact feature-hash overlap are measured separately",
+    "feature overlap is normalized over unique evaluation feature hashes",
+    "dataset identity and contamination policy are independently fingerprinted",
+    "report receipts bind input identity, policy, overlap evidence and final contamination decision",
+    "duplicate or malformed example identities and invalid thresholds fail closed",
+    "Python and Go expose the same bounded contamination semantics"
+  ],
+  "does_not_own": [
+    "semantic near-duplicate similarity computation",
+    "label collusion detection",
+    "annotation budget allocation",
+    "benchmark scoring or model evaluation execution",
+    "dataset provenance outside the supplied identifiers and feature hashes"
+  ],
+  "capability_contribution": {
+    "family": "evaluation_contamination_detection",
+    "extractable_mechanisms": [
+      "exact_id_overlap_guard",
+      "exact_feature_hash_overlap_ratio",
+      "dataset_identity_fingerprint",
+      "contamination_policy_fingerprint",
+      "policy_bound_contamination_receipt",
+      "malformed_dataset_fail_closed"
+    ],
+    "ownership": "Canonical Scale-AI-lens specialist for exact train/eval contamination evidence over supplied identities and feature signatures."
+  },
+  "relationships": [
+    {
+      "repository": "GlacierEQ/scale-label-collusion-bound",
+      "relation": "COMPOSES_WITH",
+      "integration_exercised": false,
+      "boundary": "annotator agreement anomalies are distinct from train/eval data contamination"
+    },
+    {
+      "repository": "GlacierEQ/scale-agreement-budget-allocator",
+      "relation": "COMPOSES_WITH",
+      "integration_exercised": false,
+      "boundary": "annotation-budget allocation does not establish evaluation-set independence"
+    }
+  ],
+  "next_evolution": "Add pluggable upstream similarity-signature attestations and source-provenance manifests, then prove contamination checks against persisted dataset snapshots without claiming semantic similarity from raw hash equality.",
+  "evidence_refs": [
+    "src/poison.py",
+    "go/poison/poison.go",
+    "tests/test_poison.py",
+    "go/poison/poison_test.go",
+    "ISSUE_CONTRACT.md"
+  ],
+  "nonclaims": [
+    "no Scale AI affiliation",
+    "not a production Scale AI evaluation service",
+    "exact feature-hash equality is not itself semantic near-duplicate detection",
+    "no exercised integration with collusion or budget sibling repositories"
+  ]
+}
