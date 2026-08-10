@@ -1,0 +1,11 @@
+{
+  "schema": "glaciereq.promotion-authority-grant.v1",
+  "repository": "GlacierEQ/scale-eval-poison-sentinel",
+  "source_sha": "bc8f5da282841a0c1833a36f9a7ae38325758d595e8b66779eb431c76924ad78",
+  "proof_receipt_digest": "5c89c92be8fb390f5b606fddaf22490a349137ddd61dab22901686c1e9f87e9a",
+  "not_after": 1788927149.234226,
+  "mac": "a77a93f6418b9a89fc1ae43a4cc13af51d1351a74bba87109966b26cc945d188",
+  "issuer": "local_operator_promotion_authority",
+  "verified": true,
+  "secret_ref": "src/promotion_authority.py::LOCAL_OPERATOR_SECRET"
+}

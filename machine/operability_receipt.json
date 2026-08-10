@@ -1,0 +1,27 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/scale-eval-poison-sentinel",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "bc8f5da282841a0c1833a36f9a7ae38325758d595e8b66779eb431c76924ad78",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "module": "poison",
+    "ok": true,
+    "repository": "GlacierEQ/scale-eval-poison-sentinel",
+    "smoke": {
+      "args": [
+        "[Example(example_id='sample_example_id',",
+        "[Example(example_id='sample_example_id',"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "class",
+      "method": "analyze",
+      "module_local": true,
+      "name": "EvalPoisonSentinel",
+      "result": "ContaminationReport(id_overlap=1, feature_overlap=1, train_n=1, eval_n=1, contaminated=True, fingerprint='3d55f9082e7fc9d1caa75d6049e3d7ed3be079aa3ecc26f52c7bb46231d42afe')"
+    }
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}

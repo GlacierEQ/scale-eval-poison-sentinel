@@ -1,0 +1,31 @@
+{
+  "schema": "glaciereq.proof-receipt.v1",
+  "repository": "GlacierEQ/scale-eval-poison-sentinel",
+  "source_sha": "bc8f5da282841a0c1833a36f9a7ae38325758d595e8b66779eb431c76924ad78",
+  "proof_id": "elite-scale-eval-poison-sentinel-1786335149",
+  "environment": {
+    "python": "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python",
+    "PYTHONPATH": "/Users/kcbflux/job-app/repos/scale-eval-poison-sentinel:/Users/kcbflux/job-app/repos/scale-eval-poison-sentinel/src",
+    "entry": "unittest"
+  },
+  "tests": [
+    "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
+  ],
+  "adversarial_tests": [
+    "tests/test_adversarial.py"
+  ],
+  "runtime": {
+    "operate": "scripts/operate.py (x2)",
+    "dual_run_ok": true,
+    "proof_dual_run_ok": true
+  },
+  "result": "PASS",
+  "limitations": [
+    "not production deployed",
+    "reference implementation only"
+  ],
+  "timestamp": "2026-08-10T04:12Z",
+  "artifact_hashes": {
+    "operability_receipt": "6c1dbaea72ef63f3bd1fe77a3d0191829b9c9590bd304a10e8aadce7b96f4183"
+  }
+}
