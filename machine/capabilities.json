@@ -1,1 +1,15 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/scale-eval-poison-sentinel",
+  "family": "evaluation_contamination_detection",
+  "capabilities": [
+    "exact_id_overlap_guard",
+    "exact_feature_hash_overlap_ratio",
+    "dataset_identity_fingerprint",
+    "contamination_policy_fingerprint",
+    "policy_bound_contamination_receipt",
+    "malformed_dataset_fail_closed",
+    "python_go_contamination_parity"
+  ],
+  "truth_boundary": "Exact identity/feature-signature contamination evidence only. The repository does not compute semantic near-duplicate similarity, detect annotator collusion, allocate annotation budgets, execute model evaluation, or claim Scale AI adoption."
+}
