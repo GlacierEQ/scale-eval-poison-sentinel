@@ -2,21 +2,54 @@
   "schema": "glaciereq.repo-target-contract.v1",
   "identity": {
     "repository_id": "GlacierEQ/scale-eval-poison-sentinel",
-    "family": "elite-estate"
+    "family": "evaluation_contamination_detection"
   },
   "current": {
     "state": "PROMOTED",
     "implemented": true,
     "tested": true,
-    "deployed": false
+    "deployed": false,
+    "canonical_position_pending_exact_head_proof": true
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+  "target": {
+    "purpose": "Detect exact train/eval contamination over supplied example identities and feature signatures under an explicit, receipt-bound policy.",
+    "central_bottleneck": "Evaluation confidence collapses when training and evaluation sets silently overlap and the observed overlap cannot be tied back to the exact dataset identity and threshold policy used for the decision.",
+    "success": [
+      "Exact example-ID and exact feature-hash overlap are measured separately.",
+      "Feature overlap ratio is explicit and reproducible.",
+      "Dataset and policy fingerprints are bound into every report fingerprint.",
+      "Malformed/duplicate identities and invalid thresholds fail closed.",
+      "Python and Go preserve the same contamination decision semantics.",
+      "The public claim never upgrades raw feature-hash equality into unproven semantic near-duplicate detection."
+    ]
+  },
+  "invariants": [
+    "non-empty unique example identity within each dataset",
+    "non-empty feature signature",
+    "bounded finite threshold policy",
+    "exact ID overlap is counted separately from feature overlap",
+    "feature overlap ratio uses unique evaluation feature signatures",
+    "dataset identity and policy are included in the report receipt",
+    "invalid input fails closed"
   ],
   "donor_plan": {
-    "mode": "none",
-    "donors": []
+    "status": "RESOLVED",
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
+    "donors": [],
+    "basis": "This repository owns exact train/eval contamination evidence; Scale-lens siblings own collusion and annotation-budget concerns."
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "promotion": {
+    "required_tests": ["python-unit", "python-adversarial", "go-parity", "canonical-position"],
+    "require_exact_source_sha": true,
+    "require_receipt": true,
+    "require_nonclaims": true,
+    "next_gate": "CANONICAL_POSITION_RESOLVED"
+  },
+  "nonclaims": [
+    "no Scale AI affiliation",
+    "not a production Scale AI evaluation service",
+    "no semantic near-duplicate computation from raw feature hashes",
+    "no model evaluation or benchmark execution",
+    "no exercised integration with collusion or annotation-budget siblings"
+  ]
 }
